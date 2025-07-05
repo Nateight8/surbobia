@@ -17,7 +17,7 @@ export function Boundry({
   return (
     <Comp
       className={clsx(
-        "px-6 ~py-10/16 [.header+&]:pt-44 [.header+&]:md:pt-32",
+        "px-6 ~py-10/16 [.header+&]:pt-44 [.header+&]:md:pt-32 bg-texture",
         className
       )}
       {...restProps}
