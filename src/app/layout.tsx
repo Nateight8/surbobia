@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Bowlby_One_SC, DM_Mono } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/navigation/header";
+import { SVGFilters } from "@/components/svg-filters";
 
 const bowlbyOne = Bowlby_One_SC({
   variable: "--font-bowlby-one",
@@ -28,8 +30,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${bowlbyOne.variable} ${dmMono.className} antialiased`}>
-        {children}
+      <body
+        className={`${bowlbyOne.variable} ${dmMono.className} antialiased text-zinc-900`}
+      >
+        <main>
+          <Header />
+          {children}
+        </main>
+        <SVGFilters />
       </body>
     </html>
   );
