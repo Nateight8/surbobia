@@ -1,4 +1,4 @@
-// import { FaCartShopping, FaPlus } from "react-icons/fa6";
+"use client";
 import { PrismicNextLink, PrismicNextLinkProps } from "@prismicio/next";
 import clsx from "clsx";
 import { PlusIcon } from "lucide-react";

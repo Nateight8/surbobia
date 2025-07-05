@@ -1,6 +1,13 @@
 import { FC } from "react";
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { Content, isFilled } from "@prismicio/client";
+import {
+  PrismicRichText,
+  PrismicText,
+  SliceComponentProps,
+} from "@prismicio/react";
+import { Boundry } from "@/components/boundry";
+import { Heading } from "@/components/ui/heading";
+import Product from "./_components/product";
 
 /**
  * Props for `ProductGrid`.
@@ -12,41 +19,25 @@ export type ProductGridProps = SliceComponentProps<Content.ProductGridSlice>;
  */
 const ProductGrid: FC<ProductGridProps> = ({ slice }) => {
   return (
-    <section
+    <Boundry
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="bg-brand-gray bg-texture"
     >
-      Placeholder component for product_grid (variation: {slice.variation})
-      slices.
-      <br />
-      <strong>You can edit this slice directly in your code editor.</strong>
-      {/**
-       * 💡 Use Prismic MCP with your code editor
-       *
-       * Get AI-powered help to build your slice components — based on your actual model.
-       *
-       * ▶️ Setup:
-       * 1. Add a new MCP Server in your code editor:
-       *
-       * {
-       *   "mcpServers": {
-       *     "Prismic MCP": {
-       *       "command": "npx",
-       *       "args": ["-y", "@prismicio/mcp-server@latest"]
-       *     }
-       *   }
-       * }
-       *
-       * 2. Select a model optimized for coding (e.g. Claude 3.7 Sonnet or similar)
-       *
-       * ✅ Then open your slice file and ask your code editor:
-       *    "Code this slice"
-       *
-       * Your code editor reads your slice model and helps you code faster ⚡
-       * 🎙️ Give your feedback: https://community.prismic.io/t/help-us-shape-the-future-of-slice-creation/19505
-       * 📚 Documentation: https://prismic.io/docs/ai#code-with-prismics-mcp-server
-       */}
-    </section>
+      <Heading className="text-center ~mb-4/6" as="h2">
+        <PrismicText field={slice.primary.heading} />
+      </Heading>
+      <div className="text-center ~mb-6/10">
+        <PrismicRichText field={slice.primary.bodycopy} />
+      </div>
+
+      <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {slice.primary.product.map(({ skateboard }) => {
+          if (!isFilled.contentRelationship(skateboard)) return null;
+          return <Product productId={skateboard.id} key={skateboard.id} />;
+        })}
+      </div>
+    </Boundry>
   );
 };
 
