@@ -1,23 +1,26 @@
-import { CSSProperties, ElementType, ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
+import { Slot } from "@radix-ui/react-slot";
 import clsx from "clsx";
 
 type BoundryProps = {
-  as?: ElementType;
+  asChild?: boolean;
   className?: string;
   style?: CSSProperties;
   children: ReactNode;
-};
+} & React.HTMLAttributes<HTMLElement>;
 
 export function Boundry({
-  as: Comp = "section",
+  asChild = false,
   className,
   children,
   ...restProps
 }: BoundryProps) {
+  const Comp = asChild ? Slot : "section";
+
   return (
     <Comp
       className={clsx(
-        "px-6 ~py-10/16 [.header+&]:pt-44 [.header+&]:md:pt-32 bg-texture",
+        "px-6 ~py-10/16 [.header+&]:pt-44 [.header+&]:md:pt-32",
         className
       )}
       {...restProps}

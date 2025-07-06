@@ -45,7 +45,7 @@ export function SkateBoardModel(props: SkateProps) {
     truckColor = "555555",
     boltColor = "555555",
     constantWheelSpin = true,
-    // pose,
+    pose,
   } = props;
 
   const { nodes } = useGLTF("/skateboard.gltf") as unknown as GLTFResult;
@@ -138,7 +138,7 @@ export function SkateBoardModel(props: SkateProps) {
   const boltMaterial = useMemo(
     () =>
       new THREE.MeshStandardMaterial({
-        color: `#${boltColor}`,
+        color: boltColor,
         metalness: 0.5,
         roughness: 0.3,
       }),
@@ -181,8 +181,28 @@ export function SkateBoardModel(props: SkateProps) {
     [wheelTexture]
   );
 
+  const positions = useMemo(
+    () =>
+      ({
+        upright: {
+          rotation: [0, 0, 0],
+          position: [0, 0, 0],
+        },
+        side: {
+          rotation: [0, 0, Math.PI / 2],
+          position: [0, 0.295, 0],
+        },
+      }) as const,
+    []
+  );
+
   return (
-    <group {...props} dispose={null}>
+    <group
+      {...props}
+      dispose={null}
+      rotation={positions[pose || "upright"].rotation}
+      position={positions[pose || "upright"].position}
+    >
       <group name="Scene">
         <mesh
           name="GripTape"

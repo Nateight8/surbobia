@@ -59,6 +59,8 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         wheelTextureURL={"/skateboard/SkateWheel1.png"}
         truckColor="555555"
         boltColor="555555"
+        wheelTextureURLs={["/skateboard/SkateWheel1.png"]}
+        deckTextureURLs={["/skateboard/deck.webp"]}
       />
     </Boundry>
   );

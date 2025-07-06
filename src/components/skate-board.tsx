@@ -15,6 +15,8 @@ const INITIAL_CAMERA_POSITION = [1.5, 1, 1.4] as const;
 type Props = {
   deckTextureURL: string;
   wheelTextureURL: string;
+  wheelTextureURLs: string[];
+  deckTextureURLs: string[];
   truckColor: string;
   boltColor: string;
 };
@@ -22,6 +24,8 @@ type Props = {
 export function SkateBoard({
   deckTextureURL,
   wheelTextureURL,
+  wheelTextureURLs,
+  deckTextureURLs,
   truckColor,
   boltColor,
 }: Props) {
@@ -35,6 +39,8 @@ export function SkateBoard({
           <Scene
             deckTextureURL={deckTextureURL}
             wheelTextureURL={wheelTextureURL}
+            wheelTextureURLs={wheelTextureURLs}
+            deckTextureURLs={deckTextureURLs}
             truckColor={truckColor}
             boltColor={boltColor}
           />
@@ -47,6 +53,8 @@ export function SkateBoard({
 function Scene({
   deckTextureURL,
   wheelTextureURL,
+  wheelTextureURLs,
+  deckTextureURLs,
   truckColor,
   boltColor,
 }: Props) {
@@ -194,9 +202,9 @@ function Scene({
         <group ref={containerRef} position={[-0.25, 0, -0.635]}>
           <group position={[0, -0.086, 0.635]}>
             <SkateBoardModel
-              wheelTextureURLs={[wheelTextureURL]}
+              wheelTextureURLs={wheelTextureURLs}
               wheelTextureURL={wheelTextureURL}
-              deckTextureURLs={[deckTextureURL]}
+              deckTextureURLs={deckTextureURLs}
               deckTextureURL={deckTextureURL}
               truckColor={truckColor}
               boltColor={boltColor}

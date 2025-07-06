@@ -29,14 +29,16 @@ export default async function Footer() {
         />
         <Logo className="pointer-events-none relative h-20 mix-blend-exclusion md:h-28" />
       </div>
-      <Boundry as="nav">
-        <ul className="flex flex-wrap justify-center gap-8 ~text-lg/xl">
-          {settings.data.navigation.map((item) => (
-            <li key={item.link.text} className="hover:underline">
-              <PrismicNextLink field={item.link} />
-            </li>
-          ))}
-        </ul>
+      <Boundry asChild>
+        <div className="">
+          <ul className="flex flex-wrap justify-center gap-8 ~text-lg/xl">
+            {settings.data.navigation.map((item) => (
+              <li key={item.link.text} className="hover:underline">
+                <PrismicNextLink field={item.link} />
+              </li>
+            ))}
+          </ul>
+        </div>
       </Boundry>
       {/* List of links */}
     </footer>
