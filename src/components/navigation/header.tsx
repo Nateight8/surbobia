@@ -28,6 +28,8 @@ export function Header() {
       try {
         const client = createClient();
         const settingsData = await client.getSingle("settings");
+
+        console.log("SETTINGS FROM HEADER", settingsData);
         setSettings(
           settingsData as unknown as { data: { navigation?: NavigationItem[] } }
         );

@@ -12,6 +12,7 @@ import { Heading } from "@/components/ui/heading";
 import { ButtonLink } from "@/components/ui/button-links";
 import { WideLogo } from "../wide-logo";
 import { TallLogo } from "../tall-logo";
+import { SkateBoard } from "@/components/skate-board";
 
 /**
  * Props for `Hero`.
@@ -53,6 +54,12 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           {/* <PrismicNextLink field={slice.primary.cta} /> */}
         </div>
       </div>
+      <SkateBoard
+        deckTextureURL={"/skateboard/deck.webp"}
+        wheelTextureURL={"/skateboard/SkateWheel1.png"}
+        truckColor="555555"
+        boltColor="555555"
+      />
     </Boundry>
   );
 };
