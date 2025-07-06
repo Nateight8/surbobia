@@ -12,8 +12,6 @@ export default async function Page() {
   const page = await client.getSingle("homepage").catch(() => notFound());
   const slices = bundleFeaturesSlices(page.data.slices);
 
-  console.log("SLICES FROM PAGE", slices);
-
   // Create a components object that includes both the regular components and our bundle handler
   const allComponents = {
     ...components,

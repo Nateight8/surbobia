@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Suburbia Skate
 
-## Getting Started
+A modern, interactive skateboarding e-commerce platform with stunning 3D product visualization and smooth animations.
 
-First, run the development server:
+![Suburbia Skate Preview](public/preview.jpg)
+
+## 🚀 Features
+
+- **3D Product Visualization**: Interactive 3D skateboard customizer
+- **Smooth Animations**: GSAP-powered animations and transitions
+- **Content Management**: Headless CMS integration with Prismic
+- **Responsive Design**: Fully responsive layout for all devices
+- **Performance Optimized**: Built with Next.js for optimal performance
+- **Type Safety**: Full TypeScript support
+
+## 🛠️ Technology Stack
+
+### Core
+
+- [Next.js](https://nextjs.org/) - React framework
+- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+- [React](https://reactjs.org/) - UI library
+
+### Styling & Animation
+
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [GSAP](https://greensock.com/gsap/) - Animation library
+- [ScrollSmoother](https://greensock.com/scrollsmoother/) - Smooth scrolling
+- [ScrollTrigger](https://greensock.com/scrolltrigger/) - Scroll-based animations
+
+### 3D & Graphics
+
+- [Three.js](https://threejs.org/) - 3D library
+- [@react-three/fiber](https://github.com/pmndrs/react-three-fiber) - React renderer for Three.js
+- [@react-three/drei](https://github.com/pmndrs/drei) - Useful helpers for Three.js
+
+### Backend & Data
+
+- [Prismic](https://prismic.io/) - Headless CMS
+- [@prismicio/client](https://prismic.io/docs/technologies/prismicio-client-javascript) - Prismic client library
+
+### UI Components
+
+- [Radix UI](https://www.radix-ui.com/) - Unstyled, accessible components
+- [clsx](https://github.com/lukeed/clsx) - For conditional class names
+- [tailwind-merge](https://github.com/dcastil/tailwind-merge) - Utility for Tailwind class merging
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.0.0 or later
+- npm or yarn
+- Prismic account (for content management)
+
+### Installation
+
+1. Clone the repository
+
+   ```bash
+   git clone https://github.com/yourusername/suburbia-skate.git
+   cd suburbia-skate
+   ```
+
+2. Install dependencies
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Run the development server
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## 📦 Building for Production
 
 ```bash
-npm run dev
+npm run build
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Live Demo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Check out the live demo: [suburbia-skaters.netlify.app](https://suburbia-skaters.netlify.app/)
 
-## Learn More
+### Self-hosting
+Deploy on [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) or your preferred hosting provider.
 
-To learn more about Next.js, take a look at the following resources:
+## 📝 License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🙏 Acknowledgments
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Built with ❤️ by NATE using modern web technologies
+- Special thanks to all contributors and open-source maintainers
